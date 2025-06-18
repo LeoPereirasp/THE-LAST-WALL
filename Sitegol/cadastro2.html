@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastre-se - The Last Wall</title>
+  <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Rajdhani:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      font-family: 'Rajdhani', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: linear-gradient(135deg, #550000, #220000);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-size: 1em;
+      cursor: pointer;
+      z-index: 10;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(255, 0, 0, 0.5);
+    }
+
+    .back-button:hover {
+      transform: scale(1.05) rotate(-1deg);
+      box-shadow: 0 6px 15px rgba(255, 0, 0, 0.7);
+    }
+
+    .left {
+      flex: 1.2;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      border-right: solid 2px #fff9f9;
+    }
+
+    .background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      filter: brightness(0.7);
+    }
+
+    .gradient-overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+      z-index: 1;
+    }
+
+    .left-overlay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .left-overlay h1 {
+      font-family: 'Graduate', sans-serif;
+      font-size: 4em;
+      margin-bottom: 20px;
+      color: #fff;
+      animation: typing 3s steps(15, end), blink 0.7s step-end infinite;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #fff;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: white }
+    }
+
+    .left-overlay p {
+      font-size: 1.4em;
+      font-weight: 600;
+      color: #ccc;
+    }
+
+    .right {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #111;
+      position: relative;
+      animation: slideInRight 1s ease-out forwards;
+    }
+
+    @keyframes slideInLeft {
+      from { opacity: 0; transform: translateX(-100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(100px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .container-cadastro {
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 16px;
+      padding: 40px;
+      width: 90%;
+      max-width: 520px;
+      box-shadow: 0 0 40px rgba(255, 0, 0, 0.5);
+      border: 1px solid #ff4444;
+    }
+
+    .container-cadastro h2 {
+      font-family: 'Graduate', sans-serif;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.8em;
+      color: #ffdddd;
+      text-shadow: 0 0 10px red;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .input-group label {
+      margin-bottom: 8px;
+      font-size: 1.1em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #eee;
+    }
+
+    .input-group input::placeholder {
+      color: #f7f7f7;
+      font-weight: 400;
+      opacity: 0.9;
+    }
+
+    .input-group input {
+      padding: 12px 15px;
+      background: #220000;
+      border: 1px solid #440000;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 1em;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .input-group input:focus {
+      outline: none;
+      border-color: crimson;
+      box-shadow: 0 0 10px crimson;
+    }
+
+    .input-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    input:invalid {
+      border-color: rgb(255, 253, 253);
+      animation: shake 0.3s ease-in-out 0s 2;
+    }
+
+    input:valid {
+      border-color: gold;
+    }
+
+    .btn_Cad {
+      margin-top: 25px;
+      width: 100%;
+      padding: 14px 18px;
+      background: #ff1a1a;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #fff;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .btn_Cad::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,0,0,0.6) 0%, transparent 70%);
+      animation: pulse 2s infinite;
+      z-index: 0;
+    }
+
+    .btn_Cad span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn_Cad:hover {
+      transform: scale(1.05);
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.8); opacity: 0.5; }
+      50% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(0.8); opacity: 0.5; }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .left, .right {
+        flex: 1;
+        width: 100%;
+      }
+      .left-overlay h1 {
+        font-size: 2.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="./home.html" class="back-button"><i class="fa fa-arrow-left"></i> Voltar</a>
+
+  <div class="left">
+    <video autoplay muted loop playsinline class="background-video">
+      <source src="assets/ceni.mp4" type="video/mp4" />
+    </video>
+    <div class="gradient-overlay"></div>
+    <div class="left-overlay">
+      <h1>The Last Wall</h1>
+      <p>Força, foco e defesa além do limite.</p>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="container-cadastro">
+      <h2>Crie sua conta</h2>
+      <form>
+        <div class="input-group">
+          <label for="nome"><i class="fa fa-user"></i> Nome completo</label>
+          <input type="text" id="nome" placeholder="Digite seu nome completo" required />
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="apelido"><i class="fa-solid fa-hand-dots"></i> Apelido</label>
+            <input type="text" id="apelido" placeholder="Seu apelido" required />
+          </div>
+          <div class="input-group">
+            <label for="dtnasc"><i class="fa fa-calendar"></i> Data de nascimento</label>
+            <input type="date" id="dtnasc" required />
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="email"><i class="fa fa-envelope"></i> E-mail</label>
+          <input type="email" id="email" placeholder="seuemail@exemplo.com" required />
+        </div>
+        <div class="input-row">
+          <div class="input-group">
+            <label for="senha"><i class="fa fa-lock"></i> Senha</label>
+            <input type="password" id="senha" placeholder="Crie uma senha forte" required />
+          </div>
+          <div class="input-group">
+            <label for="confirma_senha"><i class="fa fa-check-double"></i> Confirmar senha</label>
+            <input type="password" id="confirma_senha" placeholder="Confirme sua senha" required />
+          </div>
+        </div>
+        <button class="btn_Cad" type="submit"><span>Finalizar Cadastro</span></button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

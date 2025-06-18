@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Last Wall</title>
+  <link href="https://fonts.googleapis.com/css2?family=Graduate&family=Rajdhani:wght@600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Rajdhani', sans-serif;
+      background-color: #000;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header, footer {
+      padding: 20px;
+      background-color: #111;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      width: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+    }
+
+    nav a {
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #a13490;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #A13490cc, #500745cc), url('https://upload.wikimedia.org/wikipedia/commons/8/8b/Goalkeeper_saves.jpg') no-repeat center;
+      background-size: cover;
+      color: white;
+      height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      font-family: 'Graduate', sans-serif;
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      max-width: 800px;
+      margin-bottom: 2rem;
+    }
+
+    .dashboard-button {
+      background-color: #fff;
+      color: #500745;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .dashboard-button:hover {
+      background-color: #ddd;
+    }
+
+    section {
+      padding: 60px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    section img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+    }
+
+    section .content {
+      max-width: 700px;
+    }
+
+    section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    section p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    footer {
+      justify-content: space-between;
+      background-color: #111;
+    }
+
+    footer div a {
+      margin-right: 10px;
+      color: #fff;
+      font-size: 1.4rem;
+    }
+
+    .carousel {
+      position: relative;
+      max-width: 400px;
+    }
+
+    .carousel img {
+      display: none;
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel-caption {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="assets/logo.png" alt="Logo The Last Wall">
+      <h1>The Last Wall</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="sobrenos.html">Sobre Nós</a></li>
+        <li><a href="login.html">Entrar</a></li>
+        <li><a href="cadastro.html">Cadastrar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Bem-vindo ao The Last Wall</h1>
+      <p>Explore o universo dos goleiros — técnicas, treinos, história e a importância dessa posição no futebol. Descubra como evoluir seu desempenho e mergulhe fundo nessa paixão.</p>
+      <a href="dashboard.html" class="dashboard-button">Acessar Dashboard</a>
+    </section>
+
+    <section>
+      <img src="./assets/origem.jpg" alt="História do Futebol">
+      <div class="content">
+        <h2>Origem e Evolução do Futebol</h2>
+        <p>O futebol possui raízes milenares. Jogos semelhantes surgiram na China antiga e em civilizações como Grécia e Roma. Mas foi na Inglaterra do século XIX que o esporte ganhou regras e identidade, expandindo-se pelo mundo. Com o tempo, virou paixão nacional em diversos países.</p>
+        <p>O futebol não é só um jogo: é expressão cultural, econômica e social. Ele influencia moda, mídia, política e conecta povos. Com bilhões de fãs, é o espetáculo esportivo mais assistido globalmente.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="content">
+        <h2>A Posição de Goleiro</h2>
+        <p>O goleiro carrega responsabilidade única. Além de evitar gols, comanda a defesa e influencia o ritmo do jogo. Com o tempo, deixou de ser apenas defensor para também iniciar jogadas, com domínio de bola nos pés e visão tática aguçada.</p>
+        <p>Desde lendas como Lev Yashin, o único goleiro a ganhar a Bola de Ouro, até ídolos contemporâneos como Neuer e Alisson, a posição evoluiu — exigindo inteligência, liderança e preparação mental intensa.</p>
+      </div>
+      <img src="assets/position.jpeg" alt="Goleiro em ação">
+    </section>
+
+    <section>
+      <img src="https://s2.glbimg.com/9iAx4R_GWnQNHMTCrKVoGq3XnFE=/0x0:1984x1116/1600x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2020/5/A/UFFy8BTImT0jba6rbv7w/pinturasaopaulo.jpg" alt="Treinamento de Goleiro">
+      <div class="content">
+        <h2>Treinamento de Goleiros</h2>
+        <p>Treinar um goleiro é trabalhar corpo e mente. Agilidade, força, impulsão e técnica são desenvolvidas com exercícios específicos. Além disso, o treinamento mental é essencial: concentração, tomada de decisão e confiança definem o sucesso.</p>
+        <p>O goleiro treina quedas, posicionamento, passes e saídas. Cada sessão molda sua capacidade de responder sob pressão e manter a frieza nas decisões mais críticas do jogo.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="content">
+        <h2>Grandes Goleiros da História</h2>
+        <p>Lev Yashin, Dino Zoff, Gordon Banks, Taffarel, Buffon, Casillas, Neuer — cada nome representa eras, estilos e conquistas. O The Last Wall celebra esses gigantes com biografias, vídeos e análises detalhadas.</p>
+        <p>Você também conhecerá nomes menos famosos, mas igualmente brilhantes, que marcaram gerações em clubes locais e seleções de menor expressão.</p>
+      </div>
+      <div class="carousel">
+        <img class="active" src="https://www.fefumerj.com.br/wp-content/uploads/2021/02/goleiro.jpg" alt="Lev Yashin">
+        <div class="carousel-caption">Lev Yashin - O Aranha Negra, único goleiro a ganhar a Bola de Ouro.</div>
+        <img src="https://static.gazetaesportiva.com/uploads/imagem/2018/03/08/Lloris-Glyn-Kirk.jpg" alt="Dino Zoff">
+        <div class="carousel-caption">Dino Zoff - Campeão mundial aos 40 anos pela Itália.</div>
+        <img src="https://lncimg.lance.com.br/cdn-cgi/image/width=950,quality=75,fit=pad,format=webp/uploads/2024/04/000_34PW2F7-aspect-ratio-512-320.jpg" alt="Gordon Banks">
+        <div class="carousel-caption">Gordon Banks - Protagonista da defesa do século contra Pelé.</div>
+        <img src="https://midias.correio24horas.com.br/2025/03/01/bento-matheus-goleiro-da-selecao-brasileira--2632644-article.jpg" alt="Taffarel">
+        <div class="carousel-caption">Taffarel - Ídolo brasileiro e herói na Copa de 94.</div>
+        <img src="https://i.em.com.br/A2PSq1WSiMEm8CqeRip4hfxXYLc=/790x/smart/imgsapp.em.com.br/app/noticia_127983242361/2022/11/15/1421227/o-goleiro-alisson-_1_82595.jpg" alt="Buffon">
+        <div class="carousel-caption">Buffon - Uma lenda viva com décadas de excelência.</div>
+      </div>
+    </section>
+
+
+    <section>
+      <img src="./assets/mentality.jpeg" alt="Mentalidade do Goleiro">
+      <div class="content">
+        <h2>Mentalidade de Campeão</h2>
+        <p>Ser goleiro é lidar com a solidão da posição, com a glória ou culpa em cada lance decisivo. Por isso, o controle emocional é tão importante quanto o físico.</p>
+        <p>O The Last Wall traz conteúdos de psicologia esportiva, entrevistas com atletas e especialistas para ajudar a formar goleiros completos, prontos para qualquer desafio.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 <strong style="color: #fff;">The Last Wall</strong> — Todos os direitos reservados</p>
+    <div>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
+
+<script>
+  const images = document.querySelectorAll('.carousel img');
+  const captions = document.querySelectorAll('.carousel-caption');
+  let currentIndex = 0;
+
+  setInterval(() => {
+    images[currentIndex].classList.remove('active');
+    captions[currentIndex].style.display = 'none';
+    currentIndex = (currentIndex + 1) % images.length;
+    images[currentIndex].classList.add('active');
+    captions[currentIndex].style.display = 'block';
+  }, 4000);
+
+  window.onload = () => {
+    captions.forEach((cap, i) => {
+      if (i !== 0) cap.style.display = 'none';
+    });
+  }
+</script>
